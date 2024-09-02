@@ -114,9 +114,11 @@ int main() {
     // 2 3 4 
     // 3 4 5 6 
     // 4 5 6 7 8 
-    for(int i=1;i<=5;i++) {
-        for(int j=1;j<=i;j++){
-            printf("%d ", i+j-1);
+    for(int i=0;i<=5;i++) {
+        int x = i;
+        for(int j=0;j<=i;j++){
+            printf("%d ", x);
+            x++;
         }
         printf("\n");
     }
