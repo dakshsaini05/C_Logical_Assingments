@@ -11,6 +11,7 @@ void month();
 void week();
 void vowal();
 void voterid();
+void armstrong();
 
 int main() {
     // add();
@@ -23,8 +24,8 @@ int main() {
     // month();
     // week();
     // vowal();
-    voterid();
-
+    // voterid();
+    armstrong();
     return 0;
 }
 
@@ -218,5 +219,23 @@ void voterid() {
     }
     else {
         printf("Not eligible to vote");
+    }
+}
+
+void armstrong() {
+    int n, rem = 0, sum = 0;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    int temp = n;
+    while(n>0) {
+        rem = n % 10;
+        sum = sum + (rem * rem * rem);
+        n /= 10;
+    }
+    if(sum == temp) {
+        printf("Number entered is armstrong");
+    }
+    else {
+        printf("Number entered is not armstrong");
     }
 }
