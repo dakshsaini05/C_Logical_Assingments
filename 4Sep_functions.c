@@ -1,17 +1,24 @@
 #include<stdio.h>
 
-void add();
-void sub();
-void mul();
-void div();
-void mod();
-void even();
-void marksheet();
-void month();
-void week();
+// void add();
+// void sub();
+// void mul();
+// void div();
+// void mod();
+// void even();
+// void marksheet();
+// void month();
+// void week();
 void vowal();
 void voterid();
 void armstrong();
+void factorial();
+void palindrome();
+void neon();
+void reverse();
+void count();
+void sumofdigits();
+void fibonacci();
 
 int main() {
     // add();
@@ -25,7 +32,33 @@ int main() {
     // week();
     // vowal();
     // voterid();
-    armstrong();
+    char ch;
+    printf("Enter a character(a, f, b, p, n, r, c, s): ");
+    scanf("%s", &ch);
+    if(ch == 'a') {
+        armstrong();
+    }
+    else if(ch == 'f') {
+        factorial();
+    }
+    else if(ch == 'b') {
+        fibonacci();
+    }
+    else if(ch == 'p') {
+        palindrome();
+    }
+    else if(ch == 'n') {
+        neon();
+    }
+    else if(ch == 'r') {
+        reverse();
+    }
+    else if(ch == 'c') {
+        count();
+    }
+    else if(ch == 's') {
+        sumofdigits();
+    }
     return 0;
 }
 
@@ -238,4 +271,93 @@ void armstrong() {
     else {
         printf("Number entered is not armstrong");
     }
+}
+
+void factorial() {
+    int n, rem = 0, fact = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while(n > 0) {
+    rem = n % 10;
+    fact *= rem;
+    n /= 10;
+    }
+    printf("%d", fact);
+}
+
+void fibonacci() {
+    int n = 5;
+    int n1 = 0, n2 = 1, n3;
+    printf("%d %d ", n1, n2);
+    for(int i=1;i<=n;i++) {
+        n3 = n1 + n2;
+        printf("%d ", n3);
+        n1 = n2;
+        n2 = n3;
+    }
+}
+
+void palindrome() {
+    int n1 = 1221, rem = 0, sum = 0;
+    int temp = n1;
+    while(n1 > 0) {
+        rem = n1 % 10;
+        sum = sum * 10 + rem;
+        n1 /= 10;
+    }
+    if(temp == sum) {
+        printf("Number is palindrome");
+    }
+    else {
+        printf("Number is not palindrome");
+    }
+}
+
+void neon() {
+    int n = 9, rem = 0, sum = 0;
+    int temp = n * n;
+    while(temp > 0) {
+        rem = temp % 10;
+        sum += rem;
+        temp /= 10;
+    }
+    if(n == sum) {
+        printf("Neon");
+    }
+    else {
+        printf("Not neon");
+    }
+}
+
+void reversenumber() {
+    int r, rem = 0, sum = 0;
+    while(r > 0) {
+        rem = r % 10;
+        sum = r * 10 + rem;
+        r /= 10;
+    }
+    printf("%d", sum);
+}
+
+void count() {
+    int c, count = 0;
+    printf("Enter number: ");
+    scanf("%d", &c);
+    while(c > 0) {
+        c /= 10;
+        count++;
+    }
+    printf("%d", count);
+}
+
+void sumofdigit() {
+    int s, rem = 0, sum = 0;
+    printf("Enter number: ");
+    scanf("%d", &s);
+    while(s > 0) {
+        rem = s % 10;
+        sum += rem;
+        s /= 10;
+    }
+    printf("%d", sum);
 }
